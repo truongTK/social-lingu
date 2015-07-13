@@ -1,0 +1,33 @@
+UserInfo:
+- UserId
+- FluentLanguages []
+- StudyLanguages []
+
+Languages:
+- name
+
+Request:
+- _id
+- UserId
+- Text
+- InputLanguage
+- OutputLanguages []
+- DateCreate
+- DateUpdate
+
+Reply:
+- _id
+- UserId
+- RequestId
+- OutputLanguage
+- DateCreate
+- DateUpdate
+- IsAccepted
+
+ Rating:
+ - _id
+ - UserId
+ - ReplyId
+ - RatingType
+ - DateCreate
+ - DateUpdate
