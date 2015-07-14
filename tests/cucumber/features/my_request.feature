@@ -13,4 +13,4 @@ Feature: SHOW ALL MY REQUEST
     When Want to see all my request
     Then Open Menu
     And  Click "My Request"
-    And  Show all my request
+    And  Check Exist "Sao" "Start"
