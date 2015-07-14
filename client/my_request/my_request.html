@@ -6,8 +6,13 @@
 <template name="showRequest">
   <br>
   <h1> ALL YOUR REQUEST</h1>
-  {{#each myRequest}}
-    <span>my request</span>
+  {{#each showMyRequest}}
+    <span>"{{request}}"</span>
+    <span>{{inputLanguage}} -> {{outputLanguage}}</span>
     <br>
+    {{#each reply}}
+    <span> =>{{Text}}</span>
+    <br>
+    {{/each}}
   {{/each}}
 </template>

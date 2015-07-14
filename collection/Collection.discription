@@ -25,6 +25,7 @@ Reply:
 - _id
 - UserId
 - RequestId
+- Text
 - OutputLanguage
 - DateCreate
 - DateUpdate
