@@ -1,3 +1,9 @@
+/**
+ * @Discription: Model Structure
+ * This file is not used in process
+ * @Author: TruongTK
+ */
+
 UserInfo:
 - UserId
 - FluentLanguages []
