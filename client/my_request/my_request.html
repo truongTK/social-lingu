@@ -1,7 +1,19 @@
-<template name="show_request">
+<!--
+ * @Discription: UI of My Request Screen
+ * @Author: TruongTK
+  -->
+
+<template name="showRequest">
   <br>
   <h1> ALL YOUR REQUEST</h1>
-  {{#each myRequest}}
-  
+  {{#each showMyRequest}}
+    <span id = "request_{{request}}">{{request}}</span>
+    <span id = "inputLanguage">{{inputLanguage}} </span>
+    <span id = "outputLanguage">-> {{outputLanguage}}</span>
+    <br>
+    {{#each reply}}
+    <span> =>{{Text}}</span>
+    <br>
+    {{/each}}
   {{/each}}
 </template>

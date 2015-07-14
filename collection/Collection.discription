@@ -1,3 +1,9 @@
+/**
+ * @Discription: Model Structure
+ * This file is not used in process
+ * @Author: TruongTK
+ */
+
 UserInfo:
 - UserId
 - FluentLanguages []
@@ -19,6 +25,7 @@ Reply:
 - _id
 - UserId
 - RequestId
+- Text
 - OutputLanguage
 - DateCreate
 - DateUpdate
