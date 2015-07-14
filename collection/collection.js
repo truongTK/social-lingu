@@ -1,3 +1,10 @@
-Sentences = new Mongo.Collection("sentences");
-Translate = new Mongo.Collection("translate");
-UserAccounts = new Mongo.Collection('users');
+/**
+ * @Discription: Declare the Model
+ * @Author: TruongTK
+ */
+
+UserInfo = new Mongo.Collection('userinfo');
+Languages = new Mongo.Collection('languages');
+Request = new Mongo.Collection('request');
+Reply = new Mongo.Collection('reply');
+Rating = new Mongo.Collection('rating');
