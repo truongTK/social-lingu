@@ -39,7 +39,9 @@ Router.route('/profile', {
 Router.route('/signup', {
   name: 'signupTemplate'
 });
-
+Router.route('/postrequest', {
+  name: 'postNewRequest'
+});
 
 // Setup code for Slideout menu in MasterLayout
 Template.MasterLayout.onRendered(function() {
