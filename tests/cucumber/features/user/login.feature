@@ -11,7 +11,7 @@ Feature: Login test
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
-  Scenario: As user have an account and password
+  Scenario: As an user, I have an account and password
     When I fill my information with email: "toanpp@twin.vn", password: "123456"
     Then I click Login button
     And I shoud see Home page

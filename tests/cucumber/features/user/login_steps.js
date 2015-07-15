@@ -1,5 +1,5 @@
 /**
-*@Description: This file define sign up steps.
+*@Description: This file define login steps.
 *@Author: Toanpp
 */
 (function() {
@@ -11,18 +11,26 @@
 
   module.exports = function() {
     this.Given(/^I am an user$/, function(callback) {
-      // Write code here that turns the phrase above into concrete actions
-      callback.pending();
+      this.client
+        .url(process.env.ROOT_URL)
+        .waitForExist('body *')
+        .waitForVisible('body *')
+        .click('#btnMenu')
+        .click('#btnLogout')
+        .call(callback);
     });
 
-    this.When(/^I fill my information with email: "([^"]*)", password: "([^"]*)"$/, function(arg1, arg2, callback) {
-      // Write code here that turns the phrase above into concrete actions
-      callback.pending();
+    this.When(/^I fill my information with email: "([^"]*)", password: "([^"]*)"$/, function(email, pwd, callback) {
+      this.client
+        .setValue('#login-username', email)
+        .setValue('#login-password', pwd)
+        .call(callback);
     });
 
     this.Then(/^I click Login button$/, function(callback) {
-      // Write code here that turns the phrase above into concrete actions
-      callback.pending();
+      this.client
+        .click('#btn-login')
+        .call(callback);
     });
   };
 })();

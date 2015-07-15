@@ -14,6 +14,9 @@
     'resetUsers': function() {
       Meteor.users.remove({});
     },
+    'logoutAccount': function() {
+      Meteor.logout();
+    },
     'myRequestInit': function() {
       UserInfo.insert({
         UserId: "Truong",
