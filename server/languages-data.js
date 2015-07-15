@@ -6,7 +6,7 @@ Languages.upsert(
   {
     $set: {
       text: "English",
-
+      key: "en",
       createdAt: new Date()
     }
   }
@@ -19,7 +19,7 @@ Languages.upsert(
   {
     $set: {
       text: "Russian",
-
+      key: "ru",
       createdAt: new Date()
     }
   }
@@ -32,7 +32,7 @@ Languages.upsert(
   {
     $set: {
       text: "Japanese",
-
+      key: "ja",
       createdAt: new Date()
     }
   }
@@ -45,7 +45,7 @@ Languages.upsert(
   {
     $set: {
       text: "German",
-
+      key: "de",
       createdAt: new Date()
     }
   }
@@ -58,7 +58,7 @@ Languages.upsert(
   {
     $set: {
       text: "Vietnamese",
-
+      key: "vi",
       createdAt: new Date()
     }
   }
@@ -71,7 +71,7 @@ Languages.upsert(
   {
     $set: {
       text: "Korean",
-
+      key: "ko",
       createdAt: new Date()
     }
   }
@@ -84,7 +84,7 @@ Languages.upsert(
   {
     $set: {
       text: "French",
-
+      key: "fr",
       createdAt: new Date()
     }
   }
