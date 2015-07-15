@@ -34,7 +34,7 @@ Router.route('/otherRequest', {
   name: 'showOtherRequest'
 });
 Router.route('/profile', {
-  name: 'loginTemplate' });
+  name: 'profileTemplate' });
 Router.route('/signup', {
   name: 'signupTemplate' });
 
@@ -53,6 +53,10 @@ Router.route('/signup', {
       'click #btnMenu': function() {
         // increment the counter when button is clicked
         slideout.toggle();
+      },
+      'click #btnLogout': function(event){
+        event.preventDefault();
+        Meteor.logout();
       }
     });
     // Other template code
