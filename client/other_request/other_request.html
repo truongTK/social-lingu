@@ -8,8 +8,8 @@
   <div id="showOtherRequest">
     {{#each showOtherRequest}}
     <blockquote>
-      <p id = "request">
-        {{request}}
+      <p>
+        <div id="request">{{request}}</div>
         <button class="btn btn-default pull-right" onclick="getId({{requestId}})" >Reply</button>
       </p>
       {{#each reply}}
