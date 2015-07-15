@@ -39,6 +39,9 @@
       this.client
         .waitForExist('.navbar-text', 5000)
         .getText('.navbar-text').then(function(text) {
+        if (typeof text === 'string') {
+          text = [text];
+        }
         assert.equal(text[0], "Home")
       })
         .call(callback);
