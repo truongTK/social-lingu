@@ -9,6 +9,7 @@
 
 <body>
 
+
 </body>
 
 <template name="MasterLayout">
@@ -20,9 +21,9 @@
   <a id="btnToMyRequest" href="/myrequest" class="list-group-item">My request</a>
   <a id= "btnToOtherRequest" href="/otherRequest" class="list-group-item">Other request</a>
   <a href="#" class="list-group-item">Search</a>
-  <a href="#" class="list-group-item">Profile</a>
+  <a id="btnToProfile" href="/profile" class="list-group-item">Profile</a>
   <a href="#" class="list-group-item">About</a>
-  <a href="#" class="list-group-item">Log out</a>
+  <a id="btnLogout" href="#" class="list-group-item">Log out</a>
 </div>
   <div id="content">
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -34,6 +35,16 @@
         </button>
       <p class="navbar-text" style="">Home</p>
     </div>
+    <div class="container-fluid" id="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" id="btnMenu" class="btn btn-default navbar-btn pull-left" aria-label="Justify">
+              <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+            </button>
+            <p class="navbar-text">Home</p>
+          </div>
 
   </div><!-- /.container-fluid -->
 </nav>
@@ -41,4 +52,5 @@
   {{> yield}}
 </div>
 </div>
+
 </template>

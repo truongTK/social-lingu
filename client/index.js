@@ -33,13 +33,13 @@ Router.route('/myrequest', {
 Router.route('/otherRequest', {
   name: 'showOtherRequest'
 });
-
 Router.route('/profile', {
   name: 'profileTemplate'
 });
 Router.route('/signup', {
   name: 'signupTemplate'
 });
+
 
 // Setup code for Slideout menu in MasterLayout
 Template.MasterLayout.onRendered(function() {
