@@ -3,7 +3,7 @@
   'use strict';
 
   Meteor.methods({
-    'resetAll': function() {
+    'test-resetAll': function() {
       UserInfo.remove({});
       Languages.remove({});
       Request.remove({});

@@ -3,35 +3,31 @@
  * @Author: TruongTK
  */
 
-Template.showRequest.helpers({
-  showMyRequest: function() {
-    var showMyRequest = [];
+Template.showOtherRequest.helpers({
+  showOtherRequest: function() {
+    var showOtherRequest = [];
     // This line must be changed when integration
     userId = 'Truong';
-    myRequest = Request.find({
-      'UserId': userId
+    otherRequest = Request.find({
+      'UserId': {
+        $ne: userId
+      }
     }).fetch();
-    for (i = 0; i < myRequest.length; i++) {
-      for (j = 0; j < myRequest[i].OutputLanguages.length; j++) {
-        replyToMe = Reply.find({
-          'RequestId': myRequest[i].id,
-          'OutputLanguage': myRequest[i].OutputLanguages[j]
+    for (i = 0; i < otherRequest.length; i++) {
+      for (j = 0; j < otherRequest[i].OutputLanguages.length; j++) {
+        replyToRequest = Reply.find({
+          'RequestId': otherRequest[i].id,
+          'OutputLanguage': otherRequest[i].OutputLanguages[j]
         }).fetch();
-        showMyRequest.push({
-          request: myRequest[i].Text,
-          inputLanguage: myRequest[i].InputLanguage,
-          outputLanguage: myRequest[i].OutputLanguages[j],
-          reply: replyToMe
+        showOtherRequest.push({
+          requestId: otherRequest[i].id,
+          request: otherRequest[i].Text,
+          inputLanguage: otherRequest[i].InputLanguage,
+          outputLanguage: otherRequest[i].OutputLanguages[j],
+          reply: replyToRequest
         });
       }
     }
-    return showMyRequest;
-  }
-});
-
-Template.showRequest.events({
-  'click button': function() {
-    // increment the counter when button is clicked
-    Session.set('counter', Session.get('counter') + 1);
+    return showOtherRequest;
   }
 });
