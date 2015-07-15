@@ -1,0 +1,34 @@
+<!-- @Description: This file define html of sign up
+@Author: Toanpp -->
+<template name="signupTemplate">
+  {{#if currentUser}}
+  <h1 class="justLogin">Just login</h1>
+  <a href="#" class="logout">Logout</a>
+  {{else}}
+  <div>
+    <h3>Social lingu</h3>
+    <h4>Sign up</h4>
+    <div class="login-form login-password-form">
+      <div id="login-username-label-and-input">
+        <label id="login-username-label" for="login-username">
+          Email
+        </label>
+        <input id="login-username" type="text" placeholder="test@test.vn" value="test@test.vn">
+      </div>
+      <div id="login-password-label-and-input">
+        <label id="login-password-label" for="login-password" >
+          Password
+        </label>
+        <input id="login-password" type="password" placeholder="123456" value="123456">
+      </div>
+      <div id="login-password-again-label-and-input">
+        <label id="login-password-again-label" for="login-password-again">
+          Password (again)
+        </label>
+        <input id="login-password-again" type="password" placeholder="123456" value="123456">
+      </div>
+      <button name="btn-sign-up" id="button-sign-up" class="btn btn-info">Create account</button>
+    </div>
+  </div>
+  {{/if}}
+</template>

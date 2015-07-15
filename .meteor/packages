@@ -14,4 +14,5 @@ accounts-google
 xolvio:cucumber
 iron:router
 chriswessels:slideout
-semantic:ui-css
+accounts-base
+twbs:bootstrap

@@ -7,12 +7,13 @@
   <br>
   <h1> ALL YOUR REQUEST</h1>
   {{#each showMyRequest}}
-    <span>"{{request}}"</span>
-    <span>{{inputLanguage}} -> {{outputLanguage}}</span>
-    <br>
+  
+    <blockquote>
+  <p id = "request_{{request}}"><kbd>{{inputLanguage}}</kbd>{{request}}</p>
     {{#each reply}}
-    <span> =>{{Text}}</span>
-    <br>
+    <footer><kbd>{{outputLanguage}}</kbd>{{Text}}</footer>
     {{/each}}
+    </blockquote>
+
   {{/each}}
 </template>

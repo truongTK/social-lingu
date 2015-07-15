@@ -1,48 +1,33 @@
 <!--
- * @Discription: Base Index UI
- * @Author: TruongTK
- -->
-
+* @Discription: Base Index UI
+* @Author: TruongTK
+-->
 <head>
   <title>social-lingu</title>
-  <meta http-equiv="cleartype" content="on">
-<meta name="MobileOptimized" content="320">
-<meta name="HandheldFriendly" content="True">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
 
+
 </body>
 
 <template name="MasterLayout">
-
-  <div class="ui vertical menu" id="slideout-menu">
-  <a class="item">
-    My request
+  <div class="list-group" id="slideout-menu">
+  <a id="btnToHome" href="/" class="list-group-item">
+    Home
   </a>
-  <a class="item">
-    Other request
-  </a>
-  <a class="item">
-    Search
-  </a>
-  <a class="item">
-    Profile
-  </a>
-  <a class="item">
-    About
-  </a>
-  <a class="item">
-    Log out
-  </a>
+  <a id="btnToMyRequest" href="/myrequest" class="list-group-item">My request</a>
+  <a href="#" class="list-group-item">Other request</a>
+  <a href="#" class="list-group-item">Search</a>
+  <a href="#" class="list-group-item">Profile</a>
+  <a href="#" class="list-group-item">About</a>
+  <a href="#" class="list-group-item">Log out</a>
 </div>
-  <div id="content">
+  <div class="container-fluid" id="content">
     <p>
       {{> yield}}
     </p>
-    <button class="btnMenu">menu</button>
+    <button class="btnMenu" id="btnMenu">menu</button>
   </div>
-
 </template>

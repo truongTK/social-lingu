@@ -19,7 +19,8 @@
    });
 
    // Define some routes
-   Router.route('/', { name: 'showRequest' });
+   Router.route('/', { name: 'homeTemplate' });
+   Router.route('/myrequest', { name: 'showRequest' });
 
    // Setup code for Slideout menu in MasterLayout
    Template.MasterLayout.onRendered(function () {
@@ -33,7 +34,7 @@
    });
 
    Template.MasterLayout.events({
-     'click .btnMenu': function() {
+     'click #btnMenu': function() {
        // increment the counter when button is clicked
        slideout.toggle();
      }

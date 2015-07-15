@@ -68,7 +68,6 @@ routepolicy@1.0.5
 sanjo:long-running-child-process@1.1.1
 sanjo:meteor-files-helpers@1.1.0_6
 sanjo:meteor-version@1.0.0
-semantic:ui-css@2.0.2
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
@@ -77,6 +76,7 @@ spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
 tracker@1.0.7
+twbs:bootstrap@3.3.5
 twitter@1.1.4
 ui@1.0.6
 underscore@1.0.3
