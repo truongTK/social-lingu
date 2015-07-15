@@ -1,4 +1,8 @@
 
 <template name="homeTemplate">
-    <h1> Home Page</h1>
+  {{#if currentUser}}
+  <h1> Home Page</h1>
+  {{else}}
+  {{>loginTemplate}}
+  {{/if}}
 </template>
