@@ -4,8 +4,29 @@
 -->
 <head>
   <title>social-lingu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-  {{> showRequest}}
+
 </body>
+
+<template name="MasterLayout">
+  <div class="list-group" id="slideout-menu">
+  <a id="btnToHome" href="/" class="list-group-item">
+    Home
+  </a>
+  <a id="btnToMyRequest" href="/myrequest" class="list-group-item">My request</a>
+  <a href="#" class="list-group-item">Other request</a>
+  <a href="#" class="list-group-item">Search</a>
+  <a href="#" class="list-group-item">Profile</a>
+  <a href="#" class="list-group-item">About</a>
+  <a href="#" class="list-group-item">Log out</a>
+</div>
+  <div class="container-fluid" id="content">
+    <p>
+      {{> yield}}
+    </p>
+    <button class="btnMenu" id="btnMenu">menu</button>
+  </div>
+</template>

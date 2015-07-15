@@ -12,4 +12,7 @@ service-configuration
 accounts-twitter
 accounts-google
 xolvio:cucumber
+iron:router
+chriswessels:slideout
 accounts-base
+twbs:bootstrap
