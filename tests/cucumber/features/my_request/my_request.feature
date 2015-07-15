@@ -14,4 +14,4 @@ Feature: SHOW ALL MY REQUEST
     When Want to see all my request
     Then Open Menu
     And  Click "My Request"
-    And  Check Exist Request "Tìm kiếm" Reply "Search"
+    And  Check Exist My Request "Tìm kiếm" Reply "Search"

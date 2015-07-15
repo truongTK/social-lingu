@@ -20,8 +20,6 @@ var assert = require('assert');
     });
 
     this.Given(/^Create Test Data$/, function(callback) {
-      this.server.call('resetAll');
-      this.server.call('myRequestInit');
       this.client.call(callback);
     });
 
@@ -43,9 +41,16 @@ var assert = require('assert');
           .click('#btnToMyRequest')
           .call(callback);
       }
+      if (arg1 == "Other request") {
+        this.client
+          .waitForExist('#slideout-menu')
+          .waitForVisible('#slideout-menu')
+          .click('#btnToOtheReqruest')
+          .call(callback);
+      }
     });
 
-    this.Then(/^Check Exist Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {
+    this.Then(/^Check Exist My Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {
       this.client
         .waitForExist('#showRequest')
         .waitForVisible('#showRequest')

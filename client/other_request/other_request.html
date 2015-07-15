@@ -4,8 +4,18 @@
 -->
 
 <template name="showOtherRequest">
-  <br>
   <h1> ALL OTHER REQUEST</h1>
   <div id="showOtherRequest">
+    {{#each showOtherRequest}}
+    <blockquote>
+      <p>
+        <div id="request">{{request}}</div>
+        <button class="btn btn-default pull-right" onclick="getId({{requestId}})" >Reply</button>
+      </p>
+      {{#each reply}}
+      <footer id = "reply">{{Text}}</footer>
+      {{/each}}
+    </blockquote>
+    {{/each}}
   </div>
 </template>

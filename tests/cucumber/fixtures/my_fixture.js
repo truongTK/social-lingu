@@ -3,7 +3,7 @@
   'use strict';
 
   Meteor.methods({
-    'resetAll': function() {
+    'test-resetAll': function() {
       UserInfo.remove({});
       Languages.remove({});
       Request.remove({});
@@ -13,6 +13,9 @@
     },
     'resetUsers': function() {
       Meteor.users.remove({});
+    },
+    'logoutAccount': function() {
+      Meteor.logout();
     },
     'myRequestInit': function() {
       UserInfo.insert({

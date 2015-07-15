@@ -1,6 +1,7 @@
 /**
 * @Discription: Base javascript of index
 * @Author: TruongTK
+* @Update: ToanPP
 */
 Meteor.subscribe('userinfo');
 Meteor.subscribe('languages');
@@ -39,6 +40,9 @@ Router.route('/profile', {
 Router.route('/signup', {
   name: 'signupTemplate'
 });
+Router.route('/login', {
+  name: 'loginTemplate'
+});
 Router.route('/postrequest', {
   name: 'postNewRequest'
 });
@@ -62,6 +66,7 @@ Template.MasterLayout.events({
   'click #btnLogout': function(event) {
     event.preventDefault();
     Meteor.logout();
+    slideout.toggle();
   }
 });
 // Other template code
