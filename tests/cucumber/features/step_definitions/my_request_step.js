@@ -20,8 +20,6 @@ var assert = require('assert');
     });
 
     this.Given(/^Create Test Data$/, function(callback) {
-      this.server.call('resetAll');
-      this.server.call('myRequestInit');
       this.client.call(callback);
     });
 

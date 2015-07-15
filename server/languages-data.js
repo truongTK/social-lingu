@@ -1,62 +1,90 @@
 Languages.upsert(
-  {text: "English"},
+
+  {
+    text: "English"
+  },
   {
     $set: {
-      text:"English",
+      text: "English",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "Russian"},
+
+  {
+    text: "Russian"
+  },
   {
     $set: {
-      text:"Russian",
+      text: "Russian",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "Japanese"},
+
+  {
+    text: "Japanese"
+  },
   {
     $set: {
-      text:"Japanese",
+      text: "Japanese",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "German"},
+
+  {
+    text: "German"
+  },
   {
     $set: {
-      text:"German",
+      text: "German",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "Vietnamese"},
+
+  {
+    text: "Vietnamese"
+  },
   {
     $set: {
-      text:"Vietnamese",
+      text: "Vietnamese",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "Korean"},
+
+  {
+    text: "Korean"
+  },
   {
     $set: {
-      text:"Korean",
+      text: "Korean",
+
       createdAt: new Date()
     }
   }
 );
 Languages.upsert(
-  {text: "French"},
+
+  {
+    text: "French"
+  },
   {
     $set: {
-      text:"French",
+      text: "French",
+
       createdAt: new Date()
     }
   }
