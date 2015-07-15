@@ -5,11 +5,44 @@
 
 <head>
   <title>social-lingu</title>
+  <meta http-equiv="cleartype" content="on">
+<meta name="MobileOptimized" content="320">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  <!-- Show All My ReQuest -->
-  {{> showRequest}}
 </body>
+
+<template name="MasterLayout">
+
+  <div class="ui vertical menu" id="slideout-menu">
+  <a class="item">
+    My request
+  </a>
+  <a class="item">
+    Other request
+  </a>
+  <a class="item">
+    Search
+  </a>
+  <a class="item">
+    Profile
+  </a>
+  <a class="item">
+    About
+  </a>
+  <a class="item">
+    Log out
+  </a>
+</div>
+  <div id="content">
+    <p>
+      {{> yield}}
+    </p>
+    <button class="btnMenu">menu</button>
+  </div>
+
+</template>

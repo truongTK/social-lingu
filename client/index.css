@@ -1,1 +1,77 @@
 /* CSS declarations go here */
+/* CSS declarations go here */
+/* CSS declarations go here */
+body {
+  font-family: sans-serif;
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+
+header {
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+#login-buttons {
+  display: block;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#slideout-menu {
+}
+
+.slideout-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position:relative;
+  z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+.ui.vertical.menu {
+  width: 25rem;
+}
+.ui.menu {
+  font-size: 2rem;
+}
