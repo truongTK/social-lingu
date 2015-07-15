@@ -9,48 +9,35 @@
 
 <body>
 
-
 </body>
 
 <template name="MasterLayout">
+  <div class="container">
   <div class="list-group" id="slideout-menu">
   <a id="btnToHome" href="/" class="list-group-item">
     Home
   </a>
-  <a id="btnPostNewRequest" href="/postrequest" class="list-group-item">New request</a>
   <a id="btnToMyRequest" href="/myrequest" class="list-group-item">My request</a>
   <a id= "btnToOtheReqruest" href="/otherRequest" class="list-group-item">Other request</a>
   <a href="#" class="list-group-item">Search</a>
-  <a id="btnToProfile" href="/profile" class="list-group-item">Profile</a>
+  <a href="#" class="list-group-item">Profile</a>
   <a href="#" class="list-group-item">About</a>
-  <a id="btnLogout" href="#" class="list-group-item">Log out</a>
+  <a href="#" class="list-group-item">Log out</a>
 </div>
-  <div id="content">
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" id="content">
+    <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" id="btnMenu" class="btn btn-default navbar-btn pull-left" aria-label="Justify">
         <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
         </button>
-      <p class="navbar-text" style="">Home</p>
+      <p class="navbar-text">Home</p>
     </div>
-    <div class="container-fluid" id="content">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" id="btnMenu" class="btn btn-default navbar-btn pull-left" aria-label="Justify">
-              <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-            </button>
-            <p class="navbar-text">Home</p>
-          </div>
 
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container" style="padding-top: 55px;">
-  {{> yield}}
+      {{> yield}}
+  </div>
 </div>
-</div>
-
 </template>
