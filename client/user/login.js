@@ -6,6 +6,7 @@ Template.loginTemplate.events({
     Meteor.loginWithPassword(email, pwd, function(err, res) {
       if (err) console.log("Error: " + err);
     });
+    slideout.toggle();
   },
 
   "click .logout": function(event) {
@@ -14,8 +15,10 @@ Template.loginTemplate.events({
   },
   'click #btn-fblogin': function(event) {
     Meteor.loginWithFacebook();
+    slideout.toggle();
   },
   'click #btn-gglogin': function(event) {
     Meteor.loginWithGoogle();
+    slideout.toggle();
   }
 });

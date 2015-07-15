@@ -14,4 +14,4 @@ Feature: Sign up test
   Scenario:
     When I fill my information with email: "toanpp@twin.vn", password: "123456", confirm: "123456"
     Then I click Create account button
-    And I shoud see Home page
+    And I shoud see "toanpp@twin.vn"

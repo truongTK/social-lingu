@@ -32,5 +32,38 @@
         .click('#btn-login')
         .call(callback);
     });
+
+    this.Then(/^I shoud see "([^"]*)"$/, function(email, callback) {
+      this.client
+        .waitForExist('#linkProfile', 5000)
+        .getText('#linkProfile').then(function(text) {
+        if (typeof text === 'string') {
+          text = [text];
+        }
+        console.log(text);
+        assert.equal(text[0], email);
+      })
+        .call(callback);
+    });
+
+    this.When(/^I click Google link$/, function(callback) {
+      this.client
+        .click('#btn-gglogin')
+        .call(callback);
+    });
+
+    this.Then(/^I should see Home page$/, function(callback) {
+
+      this.client
+        .waitForExist('#linkProfile', 5000)
+        .call(callback);
+    });
+
+    this.When(/^I click Facebook link$/, function(callback) {
+      this.client
+        .click('#btn-fblogin')
+        .call(callback);
+    });
+
   };
 })();

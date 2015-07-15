@@ -14,4 +14,14 @@ Feature: Login test
   Scenario: As an user, I have an account and password
     When I fill my information with email: "toanpp@twin.vn", password: "123456"
     Then I click Login button
-    And I shoud see Home page
+    And I shoud see "toanpp@twin.vn"
+
+  @dev
+  Scenario: As new comer, I have a Google account
+    When I click Google link
+    Then I should see Home page
+
+  @dev
+  Scenario: As new comer, I have a Facebook account
+    When I click Facebook link
+    Then I should see Home page

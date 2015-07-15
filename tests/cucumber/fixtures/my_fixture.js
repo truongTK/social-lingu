@@ -17,6 +17,14 @@
     'logoutAccount': function() {
       Meteor.logout();
     },
+    'getUserEmail': function() {
+      var user = Meteor.user();
+      if (user.emails) {
+        var email = user.emails;
+        return "Hello - " + email[0].address;
+      }
+      return "Hello - " + user.profile.name;
+    },
     'myRequestInit': function() {
       UserInfo.insert({
         UserId: "Truong",
@@ -88,6 +96,7 @@
         OutputLanguage: "English",
         DateCreate: new Date()
       });
+
     }
 
 
