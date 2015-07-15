@@ -3,17 +3,6 @@
  * @Author: TruongTK
  */
 
-//This function must be delete when integration
-Template.showRequest.onRendered(function() {
-  Meteor.call('resetAll');
-  Meteor.call('myRequestInit', function(error, result) {
-    if (error) {
-    } else {
-    }
-  });
-  return;
-});
-
 Template.showRequest.helpers({
   showMyRequest: function() {
     var showMyRequest = [];
