@@ -1,13 +1,21 @@
 Meteor.subscribe("users");
 Template.loginTemplate.events({
-    'click #btn-login': function(event){
-      var email = $('#login-username').val();
-      var pwd = $('#login-password').val();
-      Meteor.loginWithPassword(email,pwd,function(err,res){if (err) console.log("Error: "+err);});
-    },
+  'click #btn-login': function(event) {
+    var email = $('#login-username').val();
+    var pwd = $('#login-password').val();
+    Meteor.loginWithPassword(email, pwd, function(err, res) {
+      if (err) console.log("Error: " + err);
+    });
+  },
 
-    "click .logout": function(event){
-      event.preventDefault();
-      Meteor.logout();
-    }
+  "click .logout": function(event) {
+    event.preventDefault();
+    Meteor.logout();
+  },
+  'click #btn-fblogin': function(event) {
+    Meteor.loginWithFacebook();
+  },
+  'click #btn-gglogin': function(event) {
+    Meteor.loginWithGoogle();
+  }
 });

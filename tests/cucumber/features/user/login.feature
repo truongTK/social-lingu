@@ -1,7 +1,7 @@
-# Description: This is sign up test feature
+# Description: This is login test feature
 # Author: Toanpp
-Feature: Sign up test
-  As a new comer
+Feature: Login test
+  As a user
   I want to register for an account using my email and password
   so that I can log in and use the application.
 

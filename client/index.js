@@ -1,6 +1,7 @@
 /**
 * @Discription: Base javascript of index
 * @Author: TruongTK
+* @Update: ToanPP
 */
 Meteor.subscribe('userinfo');
 Meteor.subscribe('languages');
@@ -34,29 +35,35 @@ Router.route('/otherRequest', {
   name: 'showOtherRequest'
 });
 Router.route('/profile', {
-  name: 'profileTemplate' });
+  name: 'profileTemplate'
+});
 Router.route('/signup', {
-  name: 'signupTemplate' });
+  name: 'signupTemplate'
+});
+Router.route('/login', {
+  name: 'loginTemplate'
+});
 
-    // Setup code for Slideout menu in MasterLayout
-    Template.MasterLayout.onRendered(function() {
-      var template = this;
-      slideout = new Slideout({
-        'panel': template.$('#content').get(0),
-        'menu': template.$('#slideout-menu').get(0),
-        'padding': 256,
-        'tolerance': 70
-      });
-    });
+// Setup code for Slideout menu in MasterLayout
+Template.MasterLayout.onRendered(function() {
+  var template = this;
+  slideout = new Slideout({
+    'panel': template.$('#content').get(0),
+    'menu': template.$('#slideout-menu').get(0),
+    'padding': 256,
+    'tolerance': 70
+  });
+});
 
-    Template.MasterLayout.events({
-      'click #btnMenu': function() {
-        // increment the counter when button is clicked
-        slideout.toggle();
-      },
-      'click #btnLogout': function(event){
-        event.preventDefault();
-        Meteor.logout();
-      }
-    });
-    // Other template code
+Template.MasterLayout.events({
+  'click #btnMenu': function() {
+    // increment the counter when button is clicked
+    slideout.toggle();
+  },
+  'click #btnLogout': function(event) {
+    event.preventDefault();
+    Meteor.logout();
+    slideout.toggle();
+  }
+});
+// Other template code
