@@ -13,5 +13,5 @@ Feature: Sign up test
   @dev
   Scenario:
     When I fill my information with email: "toanpp@twin.vn", password: "123456", confirm: "123456"
-    Then I click sign in button
+    Then I click Create account button
     And I shoud see Home page

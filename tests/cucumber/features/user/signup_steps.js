@@ -30,7 +30,7 @@
         .call(callback);
     });
 
-    this.Then(/^I click sign in button$/, function(callback) {
+    this.Then(/^I click Create account button$/, function(callback) {
       this.client
         .click('#button-sign-up')
         .call(callback);
