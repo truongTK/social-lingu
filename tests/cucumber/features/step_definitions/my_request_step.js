@@ -19,28 +19,51 @@ var assert = require('assert');
         .waitForVisible('body *').call(callback);
     });
 
+    this.Given(/^Create Test Data$/, function(callback) {
+      this.server.call('resetAll');
+      this.server.call('myRequestInit');
+      this.client.call(callback);
+    });
+
     this.When(/^Want to see all my request$/, function(callback) {
       this.client.call(callback);
     });
 
     this.Then(/^Open Menu$/, function(callback) {
-      this.client.call(callback);
+      this.client
+        .click('#btnMenu')
+        .call(callback);
     });
 
     this.Then(/^Click "([^"]*)"$/, function(arg1, callback) {
-      this.client.call(callback);
+      if (arg1 == "My Request") {
+        this.client
+          .waitForExist('#slideout-menu')
+          .waitForVisible('#slideout-menu')
+          .click('#btnToMyRequest')
+          .call(callback);
+      }
     });
 
-    this.Then(/^Check Exist "([^"]*)" "([^"]*)"$/, function(arg1, arg2, callback) {
+    this.Then(/^Check Exist Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {
       this.client
-        .getText('#request_' + arg1).then(function(text) {
+        .waitForExist('#showRequest')
+        .waitForVisible('#showRequest')
+        .getText('#request').then(function(text) {
         if (typeof text === 'string') {
           text = [text];
         }
         console.log(text);
         assert.equal(text[0], arg1);
-      }).call(callback);
+      })
+        .getText('#reply').then(function(text) {
+        if (typeof text === 'string') {
+          text = [text];
+        }
+        console.log(text);
+        assert.equal(text[0], arg2);
+      })
+        .call(callback);
     });
-
   }
 })();
