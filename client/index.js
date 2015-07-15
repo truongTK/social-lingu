@@ -1,4 +1,4 @@
-/**
+/**('
  * @Discription: Base javascript of index
  * @Author: TruongTK
  */
@@ -34,7 +34,9 @@ Router.route('/myrequest', {
 Router.route('/otherRequest', {
   name: 'showOtherRequest'
 });
-
+Router.route('/postrequest', {
+  name: 'postNewRequest'
+});
 // Setup code for Slideout menu in MasterLayout
 Template.MasterLayout.onRendered(function() {
   var template = this;
