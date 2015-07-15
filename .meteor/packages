@@ -16,3 +16,4 @@ iron:router
 chriswessels:slideout
 accounts-base
 twbs:bootstrap
+mrt:bootstrap-select

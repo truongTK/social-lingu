@@ -1,0 +1,30 @@
+<template name="postNewRequest">
+  <div>
+    <form id="newRequest">
+      <fieldset>
+        <div class="form-group">
+          <label for="disabledTextInput">Input</label>
+          <textarea name="textRequest" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="disabledSelect">Select input language</label>
+          <select id="inputLang" class="form-control">
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="disabledSelect">Select output language</label>
+          <select id="disabledSelect" class="selectpicker form-control" multiple>
+            <option>Select</option>
+            <option>Select</option>
+            <option>Select</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+
+    </form>
+  </div>
+</template>

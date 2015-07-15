@@ -1,8 +1,7 @@
 /**
- * @Discription: Base javascript of index
- * @Author: TruongTK
- */
-
+* @Discription: Base javascript of index
+* @Author: TruongTK
+*/
 Meteor.subscribe('userinfo');
 Meteor.subscribe('languages');
 Meteor.subscribe('request');
@@ -34,6 +33,13 @@ Router.route('/myrequest', {
 Router.route('/otherRequest', {
   name: 'showOtherRequest'
 });
+Router.route('/profile', {
+  name: 'profileTemplate'
+});
+Router.route('/signup', {
+  name: 'signupTemplate'
+});
+
 
 // Setup code for Slideout menu in MasterLayout
 Template.MasterLayout.onRendered(function() {
@@ -50,6 +56,10 @@ Template.MasterLayout.events({
   'click #btnMenu': function() {
     // increment the counter when button is clicked
     slideout.toggle();
+  },
+  'click #btnLogout': function(event) {
+    event.preventDefault();
+    Meteor.logout();
   }
 });
 // Other template code
