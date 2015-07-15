@@ -21,6 +21,8 @@
    // Define some routes
    Router.route('/', { name: 'homeTemplate' });
    Router.route('/myrequest', { name: 'showRequest' });
+   Router.route('/profile', { name: 'loginTemplate' });
+   Router.route('/signup', { name: 'signupTemplate' });
 
    // Setup code for Slideout menu in MasterLayout
    Template.MasterLayout.onRendered(function () {
