@@ -4,7 +4,11 @@
     <label for="studyLanguage">Select languages you want to learn</label>
     <select id="studyLanguage" name="studyLang" class="form-control" multiple>
       {{#each listStudyLanguage}}
-      <option value="{{key}}">{{text}}</option>
+       {{#if isSelected}}
+       <option value="{{key}}" selected>{{text}}</option>
+       {{else}}
+       <option value="{{key}}">{{text}}</option>
+       {{/if}}
       {{/each}}
     </select>
   </div>
@@ -12,8 +16,14 @@
     <label for="fluentLanguage">Select languages you are fluent</label>
     <select id="fluentLanguage" name="fluentLang" class="form-control" multiple>
       {{#each listFluentLanguage}}
+      {{#if isSelected}}
+      <option value="{{key}}" selected>{{text}}</option>
+      {{else}}
       <option value="{{key}}">{{text}}</option>
+      {{/if}}
       {{/each}}
     </select>
   </div>
+  <button type="submit" id="btnSave" class="btn btn-primary">Save</button>
+  <button type="submit" id="btnCancel" class="btn btn-success">Back</button>
 </Template>
