@@ -1,7 +1,9 @@
 
 
 Template.postNewRequest.onRendered(function() {
-  $('#outputLang').selectpicker('render');
+  setTimeout(function() {
+    $('#outputLang').selectpicker('refresh');
+  }, 500);
 });
 
 Template.postNewRequest.events({
