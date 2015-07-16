@@ -22,6 +22,12 @@ Template.showRequest.helpers({
         });
         showMyRequest.push({
           Request: eachRequest.Text,
+          // InputLanguage: Languages.findOne({
+          //   key: eachRequest.InputLanguage
+          // }).text,
+          // OutputLanguage: Languages.findOne({
+          //   key: eachRequestLanguage
+          // }).text,
           InputLanguage: eachRequest.InputLanguage,
           OutputLanguage: eachRequestLanguage,
           Replies: replies
