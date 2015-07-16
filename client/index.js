@@ -66,7 +66,21 @@ Template.MasterLayout.events({
   'click #btnLogout': function(event) {
     event.preventDefault();
     Meteor.logout();
+    Router.go('/');
     slideout.toggle();
+  }
+});
+
+Template.MasterLayout.helpers({
+  'getUserEmail': function() {
+    var user = Meteor.user();
+    if (user.emails) {
+      var email = user.emails;
+      return email[0].address;
+    }
+    return user.profile.name;
+
+
   }
 });
 // Other template code

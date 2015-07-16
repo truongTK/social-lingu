@@ -32,7 +32,11 @@
             <button type="button" id="btnMenu" class="btn btn-default navbar-btn pull-left" aria-label="Justify">
               <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
             </button>
+            {{#if currentUser}}
+            <p class="navbar-text">Hello - <a id="linkProfile" href="#">{{getUserEmail}}</a></p>
+            {{else}}
             <p class="navbar-text">Home</p>
+            {{/if}}
           </div>
         </div><!-- /.container-fluid -->
       </nav>

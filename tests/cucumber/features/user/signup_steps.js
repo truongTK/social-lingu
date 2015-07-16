@@ -35,14 +35,15 @@
         .click('#button-sign-up')
         .call(callback);
     });
-    this.Then(/^I shoud see Home page$/, function(callback) {
+    this.Then(/^I shoud see "([^"]*)"$/, function(email, callback) {
       this.client
-        .waitForExist('.navbar-text', 5000)
-        .getText('.navbar-text').then(function(text) {
+        .waitForExist('#linkProfile', 5000)
+        .getText('#linkProfile').then(function(text) {
         if (typeof text === 'string') {
           text = [text];
         }
-        assert.equal(text[0], "Home")
+        console.log(text);
+        assert.equal(text[0], email);
       })
         .call(callback);
     });

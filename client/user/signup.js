@@ -20,12 +20,13 @@ Template.signupTemplate.events({
     email = trimInput(email);
     var pwd = $('#login-password').val();
     var pwdConfirm = $('#login-password-again').val();
-    if (isValidPassword(pwd)) {
+    if (isValidPassword(pwd) && pwd == pwdConfirm) {
       Accounts.createUser({
         email: email,
         password: pwd
       });
       Router.go('/');
+      slideout.toggle();
     }
   },
 
