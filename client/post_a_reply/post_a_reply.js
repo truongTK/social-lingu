@@ -16,8 +16,8 @@ Template.postAReply.events({
       UserId: Meteor.userId(),
       RequestId: requestSelected._id,
       Text: text,
-      InputLanguage: requestSelected.InputLanguage,
-      OuputLanguages: outputLang
+      OutputLanguage: outputLang,
+      DateCreate: new Date()
     };
     Meteor.call("postNewReply", newReply);
     Router.go("/");

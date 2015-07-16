@@ -3,7 +3,6 @@
  * @Author: TruongTK
  */
 Template.showRequest.onRendered(function() {
-  Meteor.call('resetAll');
   Meteor.call('InitMockDatabase', Meteor.userId());
 });
 
