@@ -2,45 +2,34 @@
  * @Discription: JavaScript of My Request Screen
  * @Author: TruongTK
  */
+Template.showOtherRequest.events({
+  "click #btnReply": function(event, template) {
+    Session.set("requestIdSelected", event.target.value);
+    Router.go('/postAReply');
+    return;
+  }
+});
 
 Template.showOtherRequest.helpers({
   showOtherRequest: function() {
     var showOtherRequest = [];
-    // This line must be changed when integration
-    userId = 'Truong';
     otherRequest = Request.find({
       'UserId': {
-        $ne: userId
+        $ne: Meteor.userId()
       }
     });
-    //.fetch();
-    // for (i = 0; i < otherRequest.length; i++) {
-    //   for (j = 0; j < otherRequest[i].OutputLanguages.length; j++) {
-    //     replyToRequest = Reply.find({
-    //       'RequestId': otherRequest[i].id,
-    //       'OutputLanguage': otherRequest[i].OutputLanguages[j]
-    //     }).fetch();
-    //     showOtherRequest.push({
-    //       requestId: otherRequest[i].id,
-    //       request: otherRequest[i].Text,
-    //       inputLanguage: otherRequest[i].InputLanguage,
-    //       outputLanguage: otherRequest[i].OutputLanguages[j],
-    //       reply: replyToRequest
-    //     });
-    //   }
-    // }
     otherRequest.forEach(function(eachRequest) {
-      console.log(eachRequest.OutputLanguages);
       eachRequest.OutputLanguages.forEach(function(eachRequestLanguage) {
-        replys = Reply.find({
-          'RequestId': eachRequest.id,
+        replies = Reply.find({
+          'RequestId': eachRequest._id,
           'OutputLanguage': eachRequestLanguage
         });
         showOtherRequest.push({
+          RequestId: eachRequest._id,
           Request: eachRequest.Text,
           InputLanguage: eachRequest.InputLanguage,
           OutputLanguage: eachRequestLanguage,
-          Replys: replys
+          Replies: replies
         });
       });
     });

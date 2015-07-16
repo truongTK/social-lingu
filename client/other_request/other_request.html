@@ -8,9 +8,9 @@
   <div id="showOtherRequest">
     {{#each showOtherRequest}}
     <blockquote>
-      <button class="btn btn-default pull-right" onclick="getId({{requestId}})" >Reply</button>
+      <button id="btnReply" class="btn btn-default pull-right" value="{{RequestId}}">Reply</button>
       <p id="request">{{Request}}</p>
-      {{#each Replys}}
+      {{#each Replies}}
       <footer id = "reply">{{Text}}</footer>
       {{/each}}
     </blockquote>
