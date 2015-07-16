@@ -5,4 +5,3 @@
 
 //Init Mock Database Must be delete
 Meteor.call('resetAll');
-Meteor.call('InitMockDatabase');

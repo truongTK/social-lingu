@@ -2,6 +2,9 @@
  * @Discription: JavaScript of My Request Screen
  * @Author: TruongTK
  */
+Template.showRequest.onRendered(function() {
+  Meteor.call('InitMockDatabase', Meteor.userId());
+});
 
 Template.showRequest.helpers({
   showMyRequest: function() {
@@ -9,20 +12,19 @@ Template.showRequest.helpers({
     // This line must be changed when integration
     userId = 'Truong';
     myRequest = Request.find({
-      'UserId': userId
+      'UserId': Meteor.userId()
     });
     myRequest.forEach(function(eachRequest) {
-      console.log(eachRequest.OutputLanguages);
       eachRequest.OutputLanguages.forEach(function(eachRequestLanguage) {
-        replys = Reply.find({
-          'RequestId': eachRequest.id,
+        replies = Reply.find({
+          'RequestId': eachRequest._id,
           'OutputLanguage': eachRequestLanguage
         });
         showMyRequest.push({
           Request: eachRequest.Text,
           InputLanguage: eachRequest.InputLanguage,
           OutputLanguage: eachRequestLanguage,
-          Replys: replys
+          Replies: replies
         });
       });
     });
