@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
           <label for="inputLang">Select input language</label>
-          <select id="inputLang" class="form-control">
+          <select id="inputLang" name="inputLang" class="form-control">
             <option value="">Please select</option>
             {{#each listLanguage}}
             <option value="{{key}}">{{text}}</option>
@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
           <label for="outputLang">Select output language</label>
-          <select id="outputLang" class="form-control" multiple>
+          <select id="outputLang" name="outputLang[]" class="form-control" multiple>
             {{#each listLanguage}}
             <option value="{{key}}">{{text}}</option>
             {{/each}}
