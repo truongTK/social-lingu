@@ -46,6 +46,9 @@ Router.route('/login', {
 Router.route('/postrequest', {
   name: 'postNewRequest'
 });
+Router.route('/postAReply', {
+  name: 'postAReply'
+});
 
 // Setup code for Slideout menu in MasterLayout
 Template.MasterLayout.onRendered(function() {
