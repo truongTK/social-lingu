@@ -12,8 +12,8 @@
 </body>
 
 <template name="MasterLayout">
-  <div class="container">
     <div class="list-group" id="slideout-menu">
+      <a id="btnNewRequest" href="/postrequest" class="list-group-item">New request</a>
       <a id="btnToHome" href="/" class="list-group-item">
         Home
       </a>
@@ -24,8 +24,8 @@
       <a href="#" class="list-group-item">About</a>
       <a id="btnLogout" href="#" class="list-group-item">Log out</a>
     </div>
-    <div class="container-fluid" id="content">
-      <nav class="navbar navbar-default">
+    <div id="content">
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -40,7 +40,9 @@
           </div>
         </div><!-- /.container-fluid -->
       </nav>
+      <div class="container" style="padding-top: 55px;">
       {{> yield}}
     </div>
-  </div>
+
+    </div>
 </template>
