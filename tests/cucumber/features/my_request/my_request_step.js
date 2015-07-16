@@ -48,6 +48,13 @@ var assert = require('assert');
           .click('#btnToOtheReqruest')
           .call(callback);
       }
+      if (arg1 == "New request") {
+        this.client
+          .waitForExist('#slideout-menu')
+          .waitForVisible('#slideout-menu')
+          .click('#btnNewRequest')
+          .call(callback);
+      }
     });
 
     this.Then(/^Check Exist My Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {

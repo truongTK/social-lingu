@@ -10,21 +10,22 @@ Template.showRequest.helpers({
     userId = 'Truong';
     myRequest = Request.find({
       'UserId': userId
-    }).fetch();
-    for (i = 0; i < myRequest.length; i++) {
-      for (j = 0; j < myRequest[i].OutputLanguages.length; j++) {
-        replyToMe = Reply.find({
-          'RequestId': myRequest[i].id,
-          'OutputLanguage': myRequest[i].OutputLanguages[j]
-        }).fetch();
-        showMyRequest.push({
-          request: myRequest[i].Text,
-          inputLanguage: myRequest[i].InputLanguage,
-          outputLanguage: myRequest[i].OutputLanguages[j],
-          reply: replyToMe
+    });
+    myRequest.forEach(function(eachRequest) {
+      console.log(eachRequest.OutputLanguages);
+      eachRequest.OutputLanguages.forEach(function(eachRequestLanguage) {
+        replys = Reply.find({
+          'RequestId': eachRequest.id,
+          'OutputLanguage': eachRequestLanguage
         });
-      }
-    }
+        showMyRequest.push({
+          Request: eachRequest.Text,
+          InputLanguage: eachRequest.InputLanguage,
+          OutputLanguage: eachRequestLanguage,
+          Replys: replys
+        });
+      });
+    });
     return showMyRequest;
   }
 });
