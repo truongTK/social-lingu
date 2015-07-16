@@ -1,7 +1,7 @@
 
 
 Template.postNewRequest.onRendered(function() {
-  $('#outputLang').selectpicker('refresh');
+  $('#outputLang').selectpicker('render');
 });
 
 Template.postNewRequest.events({
@@ -9,14 +9,20 @@ Template.postNewRequest.events({
     var text = event.target.textRequest.value;
     var inputLang = event.target.inputLang.value;
     var outputLang = $('#outputLang').val();
-    alert(text + ',' + inputLang + ',' + outputLang);
+    var newRequestObj = {
+      Text: text,
+      InputLanguage: inputLang,
+      OuputLanguages: outputLang
+    };
+    Meteor.call("postNewRequest", newRequestObj);
+    Router.go("/myrequest");
+    return false;
   }
 });
 
 Template.postNewRequest.helpers({
   listLanguage: function() {
     $('#outputLang').selectpicker('mobile');
-    $('#outputLang').selectpicker('render');
     return Languages.find({});
   }
 });

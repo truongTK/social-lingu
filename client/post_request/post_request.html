@@ -3,8 +3,8 @@
     <form id="newRequest">
       <fieldset>
         <div class="form-group">
-          <label for="disabledTextInput">Input</label>
-          <textarea name="textRequest" class="form-control" rows="3"></textarea>
+          <label for="textRequest">Input</label>
+          <textarea name="textRequest" id="textRequest" class="form-control" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="inputLang">Select input language</label>
@@ -17,13 +17,14 @@
         </div>
         <div class="form-group">
           <label for="outputLang">Select output language</label>
+          <label id="testbtn">duuuuu</label>
           <select id="outputLang" name="outputLang[]" class="form-control" multiple>
             {{#each listLanguage}}
             <option value="{{key}}">{{text}}</option>
             {{/each}}
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="btnPostNewRequest" class="btn btn-primary">Submit</button>
       </fieldset>
 
     </form>
