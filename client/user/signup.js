@@ -1,3 +1,5 @@
+// @Description: This file define sign up functions
+// @Author: Toanpp
 Meteor.subscribe("users");
 var trimInput = function(val) {
   return val.replace(/^\s*|\s*$/g, "");
@@ -40,8 +42,7 @@ Template.signupTemplate.events({
         email: email,
         password: pwd
       });
-      Router.go('/');
-      slideout.toggle();
+      Router.go('/profile');
     } else {
       //Show error if email or password invalid
       if (isValidEmail(email) == false) {

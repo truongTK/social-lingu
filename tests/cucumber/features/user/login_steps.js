@@ -15,8 +15,6 @@
         .url(process.env.ROOT_URL)
         .waitForExist('body *')
         .waitForVisible('body *')
-        .click('#btnMenu')
-        .click('#btnLogout')
         .call(callback);
     });
 

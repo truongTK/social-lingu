@@ -1,5 +1,10 @@
+<!-- @Description: This file define Profile screen html
+@Author: Toanpp -->
 <Template name="profileTemplate">
-  <h2>Profile page</h2>
+  <h2>Your profile</h2>
+  {{#if isFirstLogin}}
+  <span class="label label-info">This is your first login, let's start!</span>
+  {{/if}}
   <div class="form-group">
     <label for="studyLanguage">Select languages you want to learn</label>
     <select id="studyLanguage" name="studyLang" class="form-control" multiple>
