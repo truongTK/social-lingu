@@ -1,7 +1,31 @@
 
 <template name="homeTemplate">
   {{#if currentUser}}
-  <h1> Home Page</h1>
+  <h3>YOUR REQUEST</h3>
+  <div id="showRequest">
+    {{#each showMyRequest}}
+    <blockquote>
+      <p id = "request">{{Request}}</p>
+      {{#each Replies}}
+      <footer id = "reply">{{Text}}</footer>
+      {{/each}}
+    </blockquote>
+    {{/each}}
+    <a href="/myrequest">More...</a>
+  </div>
+  <h3>OTHER REQUEST</h3>
+  <div id="showOtherRequest">
+    {{#each showOtherRequest}}
+    <blockquote>
+      <button id="btnReply" class="btn btn-default pull-right" value="{{RequestId}}">Reply</button>
+      <p id="request">{{Request}}</p>
+      {{#each Replies}}
+      <footer id = "reply">{{Text}}</footer>
+      {{/each}}
+    </blockquote>
+    {{/each}}
+    <a href="/otherRequest">More...</a>
+  </div>
   {{else}}
   {{>loginTemplate}}
   {{/if}}

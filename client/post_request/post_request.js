@@ -1,6 +1,7 @@
 
 
 Template.postNewRequest.onRendered(function() {
+  $('#outputLang').selectpicker('render');
   setTimeout(function() {
     $('#outputLang').selectpicker('refresh');
   }, 500);
@@ -17,7 +18,7 @@ Template.postNewRequest.events({
       OuputLanguages: outputLang
     };
     Meteor.call("postNewRequest", newRequestObj);
-    Router.go("/myrequest");
+    Router.go("/");
     return false;
   }
 });
