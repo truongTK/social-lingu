@@ -20,7 +20,7 @@ Template.postAReply.events({
       DateCreate: new Date()
     };
     Meteor.call("postNewReply", newReply);
-    Router.go("/");
+    Router.go("/otherRequest");
     return false;
   }
 });

@@ -21,14 +21,12 @@ Template.showOtherRequest.helpers({
     otherRequest.forEach(function(eachRequest) {
       eachRequest.OutputLanguages.forEach(function(eachRequestLanguage) {
         replies = Reply.find({
-          'RequestId': eachRequest._id,
-          'OutputLanguage': eachRequestLanguage
+          'RequestId': eachRequest._id
         });
         showOtherRequest.push({
           RequestId: eachRequest._id,
           Request: eachRequest.Text,
           InputLanguage: eachRequest.InputLanguage,
-          OutputLanguage: eachRequestLanguage,
           Replies: replies
         });
       });

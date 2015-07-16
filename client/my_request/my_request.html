@@ -8,9 +8,11 @@
   <div id="showRequest">
     {{#each showMyRequest}}
     <blockquote>
+      <button type="button" class="btn btn-xs btn-lg pull-left" style="width:20px; padding: 1px 2px" disabled="disabled">{{InputLanguage}}</button>
       <p id = "request">{{Request}}</p>
       {{#each Replies}}
-      <footer id = "reply">{{Text}}</footer>
+      <button type="button" class="btn btn-xs btn-lg pull-left" style="width:20px; padding: 1px 2px" disabled="disabled">{{OutputLanguage}}</button>
+      <footer id = "reply" style="line-height:1.7">{{Text}}</footer>
       {{/each}}
     </blockquote>
     {{/each}}

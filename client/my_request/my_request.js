@@ -3,9 +3,15 @@
  * @Author: TruongTK
  */
 Template.showRequest.onRendered(function() {
-  Meteor.call('InitMockDatabase', Meteor.userId());
+  //Meteor.call('InitMockDatabase', Meteor.userId());
 });
 
+// InputLanguage: Languages.findOne({
+//   key: eachRequest.InputLanguage
+// }).text,
+// OutputLanguage: Languages.findOne({
+//   key: eachRequestLanguage
+// }).text,
 Template.showRequest.helpers({
   showMyRequest: function() {
     var showMyRequest = [];
@@ -15,17 +21,13 @@ Template.showRequest.helpers({
       'UserId': Meteor.userId()
     });
     myRequest.forEach(function(eachRequest) {
-      eachRequest.OutputLanguages.forEach(function(eachRequestLanguage) {
-        replies = Reply.find({
-          'RequestId': eachRequest._id,
-          'OutputLanguage': eachRequestLanguage
-        });
-        showMyRequest.push({
-          Request: eachRequest.Text,
-          InputLanguage: eachRequest.InputLanguage,
-          OutputLanguage: eachRequestLanguage,
-          Replies: replies
-        });
+      replies = Reply.find({
+        'RequestId': eachRequest._id
+      });
+      showMyRequest.push({
+        Request: eachRequest.Text,
+        InputLanguage: eachRequest.InputLanguage,
+        Replies: replies
       });
     });
     return showMyRequest;
