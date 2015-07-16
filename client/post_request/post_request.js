@@ -17,7 +17,7 @@ Template.postNewRequest.events({
       OuputLanguages: outputLang
     };
     Meteor.call("postNewRequest", newRequestObj);
-    Router.go("/myrequest");
+    Router.go("/");
     return false;
   }
 });
