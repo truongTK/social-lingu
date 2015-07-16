@@ -20,7 +20,7 @@
       <a id="btnToMyRequest" href="/myrequest" class="list-group-item">My request</a>
       <a id= "btnToOtheReqruest" href="/otherRequest" class="list-group-item">Other request</a>
       <a href="#" class="list-group-item">Search</a>
-      <a href="#" class="list-group-item">Profile</a>
+      <a id="btnProfile" href="/profile" class="list-group-item">Profile</a>
       <a href="#" class="list-group-item">About</a>
       <a id="btnLogout" href="#" class="list-group-item">Log out</a>
     </div>
@@ -29,10 +29,10 @@
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
+            {{#if currentUser}}
             <button type="button" id="btnMenu" class="btn btn-default navbar-btn pull-left" aria-label="Justify">
               <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
             </button>
-            {{#if currentUser}}
             <p class="navbar-text">Hello - <a id="linkProfile" href="#">{{getUserEmail}}</a></p>
             {{else}}
             <p class="navbar-text">Home</p>

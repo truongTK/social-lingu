@@ -8,6 +8,7 @@ UserInfo:
 - UserId
 - FluentLanguages []
 - StudyLanguages []
+- loginCount
 
 Languages:
 - name
