@@ -3,7 +3,7 @@
  * @Author: TruongTK
  */
 Template.showRequest.onRendered(function() {
-  //Meteor.call('InitMockDatabase', Meteor.userId());
+  // Meteor.call('InitMockDatabase', Meteor.userId());
 });
 
 // InputLanguage: Languages.findOne({

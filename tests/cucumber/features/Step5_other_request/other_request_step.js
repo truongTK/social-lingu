@@ -16,7 +16,7 @@ var assert = require('assert');
       this.client.call(callback);
     });
 
-    this.Then(/^Check Other Exist Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {
+    this.Then(/^Check Exist Other User 's Request "([^"]*)" Reply "([^"]*)"$/, function(arg1, arg2, callback) {
       this.client
         .waitForExist('#showOtherRequest')
         .waitForVisible('#showOtherRequest')
@@ -26,15 +26,18 @@ var assert = require('assert');
         }
         console.log(text);
         assert.equal(text[0], arg1);
-      })
-        .getText('#reply').then(function(text) {
-        if (typeof text === 'string') {
-          text = [text];
+      }).then(function() {
+        if (arg2 == "") {
+        } else {
+          this.client.getText('#reply').then(function(text) {
+            if (typeof text === 'string') {
+              text = [text];
+            }
+            console.log(text);
+            assert.equal(text[0], arg2);
+          })
         }
-        console.log(text);
-        assert.equal(text[0], arg2);
-      })
-        .call(callback);
+      }).call(callback);
     });
   }
 })();

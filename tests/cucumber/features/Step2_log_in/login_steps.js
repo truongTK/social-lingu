@@ -15,9 +15,13 @@
         .url(process.env.ROOT_URL)
         .waitForExist('body *')
         .waitForVisible('body *')
-        .click('#btnMenu')
-        .click('#btnLogout')
         .call(callback);
+    });
+
+    this.Given(/^create a mock user "([^"]*)"$/, function(arg1, callback) {
+      this.server.call('resetUsers');
+      this.server.call('createMockUser', arg1);
+      this.client.call(callback);
     });
 
     this.When(/^I fill my information with email: "([^"]*)", password: "([^"]*)"$/, function(email, pwd, callback) {

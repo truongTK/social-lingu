@@ -48,7 +48,5 @@ var assert = require('assert');
         .click('#btnPostNewRequest')
         .call(callback);
     });
-
-
   }
 })();

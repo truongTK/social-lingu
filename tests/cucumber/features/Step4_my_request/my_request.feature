@@ -5,13 +5,12 @@ Feature: SHOW ALL MY REQUEST
 
   # The background will be run for every scenario
   Background:
-    Given I am a user
-    And Create Test Data
+    Given I have login "toanpp@twin.vn"
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
   Scenario:
-    When Want to see all my request
+    When Want to see my request "This is a request" "en" "vi"
     Then Open Menu
     And  Click "My Request"
-    And  Check Exist My Request "Tìm kiếm" Reply "Search"
+    And  Check Exist My Request "This is a request" Reply ""

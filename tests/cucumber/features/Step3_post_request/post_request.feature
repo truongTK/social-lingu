@@ -1,12 +1,11 @@
-Feature: POST A REQUEST
+Feature: SHOW ALL OTHER REQUEST TO REPLY
   As a USER,
   I want to POST A NEW REQUEST
   So that please SHOW ME POST REQUEST SCREEN and ALLOW ME SUBMIT A NEW REQUEST
 
   # The background will be run for every scenario
   Background:
-    Given I am a user
-    And Create Test Data
+    Given I have login "toanpp@twin.vn"
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev

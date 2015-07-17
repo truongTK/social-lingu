@@ -1,3 +1,6 @@
+// @Description: This file define profile functions
+// @Author: Toanpp
+
 Template.profileTemplate.helpers({
   isLogin: function() {
     if (Meteor.userId()) {
@@ -17,7 +20,6 @@ Template.profileTemplate.helpers({
       savedLang = profile[0].StudyLanguages;
     }
     var result = [];
-    console.log(savedLang);
     langs.forEach(function(item) {
       var selected = false;
       if (savedLang.indexOf(item.key) > -1) {
@@ -42,7 +44,6 @@ Template.profileTemplate.helpers({
       savedLang = profile[0].FluentLanguages;
     }
     var result = [];
-    console.log(savedLang);
     langs.forEach(function(item) {
       var selected = false;
       if (savedLang.indexOf(item.key) > -1) {
@@ -56,6 +57,17 @@ Template.profileTemplate.helpers({
       result.push(line);
     });
     return result;
+  },
+  isFirstLogin: function() {
+    var userId = Meteor.userId();
+    var lstUserProfile = UserInfo.find({
+      UserId: userId
+    }).fetch();
+    if (lstUserProfile && lstUserProfile.length > 0) {
+
+      return false;
+    }
+    return true;
   }
 
 });

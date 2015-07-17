@@ -5,8 +5,7 @@ Feature: SHOW ALL OTHER REQUEST TO REPLY
 
   # The background will be run for every scenario
   Background:
-    Given I am a user
-    And Create Test Data
+    Given I have login "toanpp@twin.vn"
 
   # This scenario will run as part of the Meteor dev cycle because it has the @dev tag
   @dev
@@ -14,4 +13,4 @@ Feature: SHOW ALL OTHER REQUEST TO REPLY
     When Want to reply a request
     Then Open Menu
     And  Click "Other request"
-    And  Check Other Exist Request "J'aime beaucoup" Reply "I Love you"
+    And  Check Exist Other User 's Request "This is a request" Reply ""
