@@ -35,7 +35,7 @@ Template.postAReply.helpers({
   listLanguage: function() {
     return Languages.find({
       'key': {
-        $in: requestSelected.OutputLanguages
+        $in: [requestSelected.OutputLanguages]
       }
     });
   }

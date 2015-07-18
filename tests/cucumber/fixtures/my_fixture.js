@@ -53,63 +53,14 @@
         DateUpdate: new Date()
       });
     },
-    'InitMockDatabaseTest': function() {
-      var R1 = Request.insert({
-        UserId: thisUserId,
-        Text: "Tìm kiếm",
-        InputLanguage: "vi",
-        OutputLanguages: ["en", "fr"],
-        DateCreate: new Date()
-      });
-      var R2 = Request.insert({
-        UserId: thisUserId,
-        Text: "Try Harder",
-        InputLanguage: "en",
-        OutputLanguages: ["vi"],
-        DateCreate: new Date()
-      });
-      var R3 = Request.insert({
-        UserId: "OtherUser",
-        Text: "J'aime beaucoup",
-        InputLanguage: "fr",
-        OutputLanguages: ["en"],
-        DateCreate: new Date()
-      });
-      Reply.insert({
-        UserId: "OtherUser",
-        RequestId: R1,
-        Text: "Search",
-        OutputLanguage: "en",
-        DateCreate: new Date()
-      });
-      Reply.insert({
-        UserId: "OtherUser",
-        RequestId: R1,
-        Text: "Rechercher",
-        OutputLanguage: "fr",
-        DateCreate: new Date()
-      });
-      Reply.insert({
-        UserId: "OtherUser",
-        RequestId: R2,
-        Text: "Mạnh nữa lên",
-        OutputLanguage: "vi",
-        DateCreate: new Date()
-      });
-      Reply.insert({
-        UserId: "OtherUser",
-        RequestId: R2,
-        Text: "Cố lên nào",
-        OutputLanguage: "vi",
-        DateCreate: new Date()
-      });
-      Reply.insert({
-        UserId: thisUserId,
-        RequestId: R3,
-        Text: "I Love you",
-        OutputLanguage: "en",
-        DateCreate: new Date()
-      });
+    'checkReply': function(arg1, arg2, arg3) {
+      var count = Reply.find({
+        Text: arg2,
+        OutputLanguage: arg3
+      }).count();
+      if (count == '0') {
+        console.log('    Fail To Find Reply');
+      }
     }
   });
 })();

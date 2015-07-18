@@ -63,6 +63,11 @@ var assert = require('assert');
           .click('#btnToOtheReqruest')
           .call(callback);
       }
+      if (arg1 == "Reply") {
+        this.client
+          .click('#btnReply')
+          .call(callback);
+      }
     });
   }
 })();
